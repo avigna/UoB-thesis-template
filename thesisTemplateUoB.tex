@@ -1,0 +1,101 @@
+\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{acronym}
+\usepackage{ae,aecompl}
+\usepackage{acronym}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage[compatibility=false]{caption}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{color}
+\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm,bindingoffset=12mm]{geometry}
+
+\usepackage{xcolor}
+\usepackage{gensymb}
+\usepackage{bm}
+\usepackage{etoolbox}
+\usepackage[inline]{enumitem}	% To enumerate within a single line
+\usepackage{float}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\itshape \nouppercase \rightmark}
+\fancyhead[LO,RE]{\itshape \nouppercase Chapter \arabic{chapter}}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{etoolbox}
+\usepackage{mathtools}
+
+\usepackage{datetime}
+
+\usepackage[inline]{enumitem}	% To enumerate within a single line
+\usepackage{amssymb}  % Extra maths symbols
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage[square,numbers]{natbib}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+
+
+\usepackage{arydshln}
+\usepackage{filecontents}
+
+\newcommand{\mdash}{-}
+
+
+\graphicspath{ {Figures/}, {Figures/Introduction/}}
+
+\begin{document}
+
+	\input{TitlePage}
+
+	\pagenumbering{roman}
+	
+	\include{Abstract}
+	\include{Dedication}
+	\include{Acknowledgements}
+	
+	\tableofcontents
+	\setlength{\parskip}{18pt}
+	\addcontentsline{toc}{chapter}{List of Figures}
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\listoftables
+
+	\clearpage
+
+	\pagestyle{fancy}
+	\fancyhead[LO,LE]{\nouppercase{\rightmark}}
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\label{chap:introduction}
+\input{Chapters/Chapter1}
+
+\chapter{Paper I}
+\label{chap:2}
+\input{Chapters/Chapter2}
+
+\chapter{Conclusions}
+\label{chap:conclusions}
+\input{Chapters/Chapter3}
+
+\clearpage
+\appendix
+\label{chap:appendix}
+\input{Chapters/Appendices}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{thesis}
+\bibliographystyle{abbrvnat}
+
+\end{document}
